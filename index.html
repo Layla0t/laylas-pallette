@@ -1,1 +1,827 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Layla's Pallette | Baked with Love</title>
+  <meta name="description"
+    content="Discover the homemade cookies, brownies, muffins, and egg-free treats of Layla's Pallette.">
+
+  <meta name="theme-color" content="#fff8f0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #fff8f0;
+      --white: #ffffff;
+      --chocolate: #6f3928;
+      --dark: #422c25;
+      --pink: #f2d5d7;
+      --pink-dark: #dba9ae;
+      --caramel: #e7bfa3;
+      --muted: #806d63;
+      --shadow: 0 12px 35px rgba(66, 44, 37, 0.09);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 95px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--dark);
+      font-family: var(--sans);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--chocolate);
+      outline-offset: 4px;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .announcement {
+      padding: 8px 16px;
+      background: var(--chocolate);
+      color: var(--white);
+      text-align: center;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 248, 240, 0.96);
+      border-bottom: 1px solid rgba(111, 57, 40, 0.10);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-wrap {
+      max-width: 1160px;
+      margin: auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      text-decoration: none;
+      font-family: var(--serif);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--chocolate);
+      line-height: 1.2;
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 3px;
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #a65c62;
+    }
+
+    .nav-links .nav-cta {
+      padding: 10px 17px;
+      border-radius: 30px;
+      background: var(--chocolate);
+      color: var(--white);
+    }
+
+    .nav-cta:hover {
+      background: var(--dark);
+      color: var(--white) !important;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 88px 24px;
+      background:
+        radial-gradient(ellipse at 90% 10%, #f2d5d7 0, transparent 36%),
+        radial-gradient(ellipse at 5% 90%, #e7bfa3 0, transparent 32%),
+        var(--cream);
+    }
+
+    .hero-inner {
+      max-width: 1160px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .eyebrow {
+      margin: 0 0 15px;
+      color: var(--chocolate);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--serif);
+      line-height: 1.2;
+    }
+
+    .hero h1 {
+      max-width: 600px;
+      margin: 0 0 22px;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      letter-spacing: -0.045em;
+    }
+
+    .hero h1 em {
+      color: var(--chocolate);
+      font-weight: 500;
+    }
+
+    .hero-copy {
+      max-width: 510px;
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .button-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 23px;
+      border: 2px solid var(--chocolate);
+      border-radius: 30px;
+      background: var(--chocolate);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: var(--dark);
+    }
+
+    .button-secondary {
+      background: transparent;
+      color: var(--chocolate);
+    }
+
+    .button-secondary:hover {
+      background: var(--pink);
+    }
+
+    .hero-art {
+      position: relative;
+      min-height: 410px;
+      display: grid;
+      place-items: center;
+    }
+
+    .hero-art img {
+      width: 100%;
+      height: 410px;
+      object-fit: cover;
+      border-radius: 48% 48% 24px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-note {
+      position: absolute;
+      right: -14px;
+      bottom: 22px;
+      max-width: 190px;
+      padding: 17px 20px;
+      border: 1px solid #ffffff;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: var(--shadow);
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      text-align: center;
+      transform: rotate(3deg);
+    }
+
+    .hero-note span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 0.72rem;
+    }
+
+    .trust-strip {
+      padding: 19px 24px;
+      background: var(--white);
+      border-top: 1px solid #f0e5dc;
+      border-bottom: 1px solid #f0e5dc;
+    }
+
+    .trust-inner {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px 45px;
+      color: var(--chocolate);
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    .trust-inner span::before {
+      content: "✦";
+      margin-right: 9px;
+      color: #c18488;
+    }
+
+    .section {
+      padding: 85px 24px;
+    }
+
+    .section-inner {
+      max-width: 1160px;
+      margin: auto;
+    }
+
+    .section-heading {
+      max-width: 650px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .section-heading h2,
+    .about-copy h2,
+    .contact-card h2 {
+      margin: 0 0 15px;
+      font-size: clamp(2.1rem, 4vw, 3.3rem);
+      letter-spacing: -0.025em;
+    }
+
+    .section-heading > p:last-child {
+      color: var(--muted);
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .product-card {
+      overflow: hidden;
+      border: 1px solid #f0e5dc;
+      border-radius: 18px;
+      background: var(--white);
+      box-shadow: 0 4px 18px rgba(66, 44, 37, 0.035);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .product-image {
+      height: 205px;
+      overflow: hidden;
+      background: var(--pink);
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product-info h3 {
+      margin: 0 0 9px;
+      font-size: 1.3rem;
+    }
+
+    .product-info p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .product-tag {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 5px 10px;
+      border-radius: 30px;
+      background: #fbeaec;
+      color: var(--chocolate);
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .about-section {
+      background: #f7e9e3;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .about-photo {
+      min-height: 410px;
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 410px;
+      object-fit: cover;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-copy > p:not(.eyebrow) {
+      color: var(--muted);
+    }
+
+    .about-copy h2 {
+      max-width: 500px;
+    }
+
+    .about-copy .button {
+      margin-top: 10px;
+    }
+
+    .promise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 35px;
+    }
+
+    .promise {
+      padding: 20px 15px;
+      border: 1px solid rgba(111, 57, 40, 0.12);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.65);
+      text-align: center;
+    }
+
+    .promise .symbol {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.6rem;
+    }
+
+    .promise strong {
+      display: block;
+      font-size: 0.87rem;
+    }
+
+    .promise p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 0.76rem;
+    }
+
+    .contact-section {
+      padding: 80px 24px;
+    }
+
+    .contact-card {
+      max-width: 900px;
+      margin: auto;
+      padding: 55px 25px;
+      border-radius: 25px;
+      background:
+        radial-gradient(ellipse at top right, #f2d5d7, transparent 45%),
+        var(--white);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .contact-card > p:not(.eyebrow) {
+      max-width: 550px;
+      margin: 0 auto 25px;
+      color: var(--muted);
+    }
+
+    .contact-card .button {
+      margin: 5px;
+    }
+
+    .site-footer {
+      padding: 35px 24px 22px;
+      background: var(--chocolate);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .footer-brand {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 1.8rem;
+    }
+
+    .site-footer p {
+      margin: 7px 0;
+      font-size: 0.85rem;
+    }
+
+    .footer-note {
+      margin-top: 25px !important;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      color: #f3dfd3;
+      font-size: 0.75rem !important;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        gap: 35px;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .about-grid {
+        gap: 35px;
+      }
+
+      .hero-art,
+      .hero-art img {
+        min-height: 340px;
+        height: 340px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .nav-wrap {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 12px 18px;
+      }
+
+      .nav-links a {
+        font-size: 0.82rem;
+      }
+
+      .hero {
+        padding: 55px 20px;
+      }
+
+      .hero-inner,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-inner {
+        gap: 35px;
+      }
+
+      .hero-art,
+      .hero-art img {
+        min-height: 300px;
+        height: 300px;
+      }
+
+      .hero-note {
+        right: 0;
+      }
+
+      .section {
+        padding: 60px 20px;
+      }
+
+      .products {
+        gap: 13px;
+      }
+
+      .product-image {
+        height: 155px;
+      }
+
+      .product-info {
+        padding: 15px;
+      }
+
+      .product-info h3 {
+        font-size: 1.12rem;
+      }
+
+      .about-photo,
+      .about-photo img {
+        min-height: 280px;
+        height: 280px;
+      }
+
+      .promise-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-section {
+        padding: 55px 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="announcement">
+    A LITTLE SWEETNESS, MADE WITH LOVE ♡
+  </div>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="#home" aria-label="Layla's Pallette home">
+        Layla's Pallette
+        <small>Homemade with heart</small>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#menu">Our Treats</a>
+        <a href="#about">Our Story</a>
+        <a href="#contact" class="nav-cta">Get in Touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">Welcome to our little bakery</p>
+          <h1>Sweet moments,<br><em>made from the heart.</em></h1>
+
+          <p class="hero-copy">
+            From chocolatey brownies to freshly baked cookies,
+            discover homemade treats crafted to bring a little
+            extra joy to your day.
+          </p>
+
+          <div class="button-row">
+            <a class="button" href="#menu">Explore Our Treats &rarr;</a>
+            <a class="button button-secondary" href="#about">
+              Meet the Baker
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <img
+            src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=1000&q=85"
+            alt="Freshly baked chocolate chip cookies"
+            fetchpriority="high">
+          <div class="hero-note">
+            Baked with love ♡
+            <span>A little joy in every bite</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="trust-inner">
+        <span>Made with care</span>
+        <span>Sweetness for every occasion</span>
+        <span>Small-batch goodness</span>
+      </div>
+    </div>
+
+    <section class="section" id="menu">
+      <div class="section-inner">
+        <div class="section-heading">
+          <p class="eyebrow">Something delicious awaits</p>
+          <h2>A few of our favorite treats</h2>
+          <p>
+            Every treat has its own little personality.
+            Find your next favorite sweet below!
+          </p>
+        </div>
+
+        <div class="products">
+          <article class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=700&q=80"
+                alt="Golden chocolate chip cookies"
+                loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3>Cookies</h3>
+              <p>Comforting, sweet, and perfect for a little treat.</p>
+              <span class="product-tag">A timeless favorite</span>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=700&q=80"
+                alt="Rich chocolate brownies"
+                loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3>Brownies</h3>
+              <p>Chocolatey goodness for the ultimate dessert lover.</p>
+              <span class="product-tag">Chocolate lovers</span>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=700&q=80"
+                alt="Freshly baked muffins"
+                loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3>Muffins</h3>
+              <p>A cozy, delicious pick for mornings or snack time.</p>
+              <span class="product-tag">A cozy classic</span>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=700&q=80"
+                alt="Beautifully decorated sweet treats"
+                loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3>Egg-Free Treats</h3>
+              <p>Ask about our egg-free options and ingredients.</p>
+              <span class="product-tag">Ask about availability</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="section-inner">
+        <div class="about-grid">
+          <div class="about-photo">
+            <img
+              src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1000&q=85"
+              alt="A warm kitchen ready for baking"
+              loading="lazy">
+          </div>
+
+          <div class="about-copy">
+            <p class="eyebrow">A little about us</p>
+            <h2>Made with creativity, care, and a whole lot of love.</h2>
+
+            <p>
+              Layla's Pallette began with a love for baking and
+              the happiness that homemade treats can bring.
+              What started as a creative passion grew into a
+              small business built around sharing that joy.
+            </p>
+
+            <p>
+              Every recipe is another opportunity to create
+              something special, celebrate life's little moments,
+              and make someone's day a bit sweeter.
+            </p>
+
+            <a class="button" href="#contact">Say Hello &rarr;</a>
+          </div>
+        </div>
+
+        <div class="promise-grid">
+          <div class="promise">
+            <span class="symbol" aria-hidden="true">♡</span>
+            <strong>Made with Care</strong>
+            <p>Thoughtful baking from start to finish.</p>
+          </div>
+
+          <div class="promise">
+            <span class="symbol" aria-hidden="true">✿</span>
+            <strong>Creative Goodness</strong>
+            <p>Fun flavors and a passion for creating.</p>
+          </div>
+
+          <div class="promise">
+            <span class="symbol" aria-hidden="true">☼</span>
+            <strong>Made to Share</strong>
+            <p>Little treats for life's happy moments.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-card">
+        <p class="eyebrow">Let's make something sweet</p>
+        <h2>Have a treat in mind?</h2>
+        <p>
+          Have a question about our baked goods or egg-free options?
+          Get in touch to ask about ingredients, availability,
+          and possible orders.
+        </p>
+        <a class="button" href="mailto:YOUR-EMAIL@example.com">
+          Email Us &rarr;
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-brand">Layla's Pallette</p>
+    <p>Homemade with heart, shared with love.</p>
+    <p class="footer-note">
+      &copy; <span id="year">2026</span> Layla's Pallette.
+      All rights reserved.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
+
